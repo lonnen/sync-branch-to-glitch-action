@@ -29,7 +29,7 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
     steps:
       - uses: lonnen/sync-branhc-to-glitch-action@v1.0.0
         with:
