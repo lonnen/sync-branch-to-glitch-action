@@ -1,0 +1,21 @@
+name: 'Sync a repo branch to a Glitch project repo'
+description: 'Synchronize changes to a branch in a GitHub repository to a Glitch.com project'
+
+inputs:
+  glitch_git_URL:
+    description: 'The private Glitch.com repository url retrieved from the Glitch project editor'
+    required: true
+  github_token:
+    description: 'A GitHub token with permissions to read the repository. It is advisable to use an automatically generated token as described in the README'
+    required: true
+  gh_branch:
+    description: 'The branch of the local repository that is to be pushed to Glitch'
+    default: 'main'
+    required: false
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    GLITCH_GIT_URL: ${{ inputs.branch }}
+    GITHUB_TOKEN: ${{ inputs.github_token }}
