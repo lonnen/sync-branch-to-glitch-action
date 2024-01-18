@@ -31,8 +31,8 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: lonnen/sync-branhc-to-glitch-action@v1.0.0
-        with:
+      - uses: lonnen/sync-branch-to-glitch-action@v1.0.0
+        env:
           glitch_git_URL: ${{ secrets.GlitchGitURL }}
 ```
 
