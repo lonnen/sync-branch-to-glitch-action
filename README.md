@@ -33,8 +33,8 @@ jobs:
     steps:
       - uses: lonnen/sync-branch-to-glitch-action@v1.0.0
         env:
-          glitch_git_URL: ${{ secrets.GlitchGitURL }}
-          gh_branch: 'main'
+          GLITCH_GIT_URL: ${{ secrets.GlitchGitURL }}
+          GITHUB_BRANCH: 'main'
 ```
 
 You control when the job runs by using standard [workflow events trigger filters](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#push).  
@@ -42,8 +42,8 @@ You control when the job runs by using standard [workflow events trigger filters
 Practically you may prefer less-continuous delivery, and instead filter on [tags](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#running-your-workflow-only-when-a-push-of-specific-tags-occurs) or [releases](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#release).
 
 ## inputs
-- `Glitch_Git_URL` The Glitch project Git URL retrieved from the Glitch project editor
-- `gh_branch` This is the GitHub Repo branch that will be pushed to Glitch. If this is unspecified it defaults to 'main'
+- `GLITCH_GIT_URL` The Glitch project Git URL retrieved from the Glitch project editor
+- `GITHUB_BRANCH` This is the GitHub Repo branch that will be pushed to Glitch. If this is unspecified it defaults to 'main'
 
 ## License
 

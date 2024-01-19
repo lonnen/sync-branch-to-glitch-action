@@ -9,4 +9,4 @@ git clone "${GITHUB_TOKEN_AND_REPO_URL}".git ghrepo
 cd ghrepo
 git remote add glitch "${GGU}"
 
-git push glitch "${GH_BRANCH:=main}":main
+git push glitch "${GITHUB_BRANCH:=main}":main
