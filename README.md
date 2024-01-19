@@ -20,20 +20,21 @@ Then you'll want to set up a workflow file.
 
 ```yml
 name: Publish to Glitch
+on:
+  push:
+    tags:
+      - v**
 
 jobs:
-  on:
-    push:
-      branches:
-        - 'main'
   sync:
     runs-on: ubuntu-latest
     permissions:
       contents: read
     steps:
-      - uses: lonnen/sync-branch-to-glitch-action@v1.0.0
+      - uses: lonnen/sync-branch-to-glitch-action@v0.0.4
         env:
           GLITCH_GIT_URL: ${{ secrets.GlitchGitURL }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_BRANCH: 'main'
 ```
 
