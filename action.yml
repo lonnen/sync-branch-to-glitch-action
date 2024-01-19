@@ -1,5 +1,8 @@
 name: 'Sync a repo branch to a Glitch project repo'
 description: 'Synchronize changes to a branch in a GitHub repository to a Glitch.com project'
+branding:
+  icon: share-2
+  color: green
 
 inputs:
   glitch_git_URL:
